@@ -9,7 +9,9 @@
   "customizations": {
     "vscode": {
         "extensions": [
-            "GitHub.copilot"
+          "GitHub.copilot",
+          "ms-python.python",
+          "ms-python.debugpy"
         ]
     },
     "codespaces": {
@@ -18,5 +20,11 @@
         ]
     }
   } ,
-  "postCreateCommand": "echo '# Writing code upon codespace creation!'  >> codespace.md"
+  "postCreateCommand": ".devcontainer/postCreate.sh",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "installTools": true,
+      "version": "3.10"
+    }
+  }
 }
